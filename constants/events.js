@@ -1,0 +1,73 @@
+export default [
+  {
+    title: "Chand uplugga",
+    image:
+      "https://mff.dx.no/77861.jpg?w=370&h=250&fit=crop&fit=crop&crop=faces,top&crop=faces,top&auto=compress",
+    url: "https://www.melhuskulturen.no/konsert-d1adw84",
+    date: "22/05/2021",
+    time: "19:00",
+    place: "Kultursalen (NY)",
+    target: "Adults",
+    cta: "View article",
+    horizontal: false,
+    full: true,
+    block: false,
+  },
+  {
+    title: "Terje Tysland",
+    image:
+      "https://mff.dx.no/77159.jpg?w=370&h=250&fit=crop&fit=crop&crop=faces,top&crop=faces,top&auto=compress",
+    url: "https://www.melhuskulturen.no/konsert-terje-tysland-g2c8nzg/",
+    date: "28/05/2021",
+    time: "19:00",
+    place: "Kultursalen (NY)",
+    target: "Adults",
+    cta: "View article",
+    horizontal: false,
+    full: false,
+    block: true,
+  },
+  {
+    title: "Foredrag med Dag Jørund Lønning: Korleis kjem me nærare naturen?",
+    image:
+      "https://mff.dx.no/78040.jpg?w=370&h=250&fit=crop&fit=crop&crop=faces,top&crop=faces,top&auto=compress",
+    url: "https://docs.expo.io/versions/latest/sdk/webbrowser/",
+    date: "03/06/2021",
+    time: "16:00",
+    place: "Kultursalen (NY)",
+    target: "Adults",
+    cta: "View article",
+    horizontal: false,
+    full: false,
+    block: false,
+  },
+  {
+    title: "«Jazz og vin» - jazzkonsert med Aspen trio og vinkurs",
+    image:
+      "https://mff.dx.no/78044.jpg?w=370&h=250&fit=crop&fit=crop&crop=faces,top&crop=faces,top&auto=compress",
+    url: "https://www.melhuskulturen.no/jazz-og-vin-jazzkonsert-med-aspen-trio-og-vinkurs-o8j2wd/",
+    date: "04/06/2021",
+    time: "19:00",
+    place: "Haugen gård, Bennave",
+    target: "Adults",
+    cta: "View article",
+    horizontal: true,
+    full: true,
+    block: false,
+  },
+  {
+    title:
+      "Tusen års matkultur og bondekultur i Melhus - foredrag ved Reidar Almås",
+    image:
+      "https://mff.dx.no/78037.png?w=370&h=250&fit=crop&fit=crop&crop=faces,top&crop=faces,top&auto=compress",
+    url: "https://www.melhuskulturen.no/tusen-ars-matkultur-og-bondekultur-i-melhus-foredrag-ved-ee82ri/",
+    date: "05/06/2021",
+    time: "13:00",
+    place: "Kultursalen (NY)",
+    target: "Adults",
+    cta: "View article",
+    horizontal: false,
+    full: true,
+    block: false,
+  },
+];
