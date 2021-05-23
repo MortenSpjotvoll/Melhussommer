@@ -1,6 +1,7 @@
 export default [
   {
     title: "Chand uplugga",
+    category: "Music",
     image:
       "https://mff.dx.no/77861.jpg?w=370&h=250&fit=crop&fit=crop&crop=faces,top&crop=faces,top&auto=compress",
     url: "https://www.melhuskulturen.no/konsert-d1adw84",
@@ -15,6 +16,7 @@ export default [
   },
   {
     title: "Terje Tysland",
+    category: "Music",
     image:
       "https://mff.dx.no/77159.jpg?w=370&h=250&fit=crop&fit=crop&crop=faces,top&crop=faces,top&auto=compress",
     url: "https://www.melhuskulturen.no/konsert-terje-tysland-g2c8nzg/",
@@ -29,6 +31,7 @@ export default [
   },
   {
     title: "Foredrag med Dag Jørund Lønning: Korleis kjem me nærare naturen?",
+    category: "Learning",
     image:
       "https://mff.dx.no/78040.jpg?w=370&h=250&fit=crop&fit=crop&crop=faces,top&crop=faces,top&auto=compress",
     url: "https://docs.expo.io/versions/latest/sdk/webbrowser/",
@@ -43,6 +46,7 @@ export default [
   },
   {
     title: "«Jazz og vin» - jazzkonsert med Aspen trio og vinkurs",
+    category: "Music",
     image:
       "https://mff.dx.no/78044.jpg?w=370&h=250&fit=crop&fit=crop&crop=faces,top&crop=faces,top&auto=compress",
     url: "https://www.melhuskulturen.no/jazz-og-vin-jazzkonsert-med-aspen-trio-og-vinkurs-o8j2wd/",
@@ -58,13 +62,14 @@ export default [
   {
     title:
       "Tusen års matkultur og bondekultur i Melhus - foredrag ved Reidar Almås",
+    category: "Learning",
     image:
       "https://mff.dx.no/78037.png?w=370&h=250&fit=crop&fit=crop&crop=faces,top&crop=faces,top&auto=compress",
     url: "https://www.melhuskulturen.no/tusen-ars-matkultur-og-bondekultur-i-melhus-foredrag-ved-ee82ri/",
     date: "05/06/2021",
     time: "13:00",
     place: "Kultursalen (NY)",
-    target: "Adults",
+    target: "Children",
     cta: "View article",
     horizontal: false,
     full: true,

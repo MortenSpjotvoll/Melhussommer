@@ -1,5 +1,6 @@
-import melhusTheme from "./Theme";
-import events from "./events";
+import MelhusTheme from "./Theme";
+import Filters from "./Filters";
+import EventList from "./Events";
 import Images from "./Images";
 
-export { events, melhusTheme, Images };
+export { EventList, Filters, MelhusTheme, Images };

@@ -5,7 +5,7 @@ import { Entypo } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 
-import melhusTheme from "../constants/Theme";
+import MelhusTheme from "../constants/Theme";
 
 class DrawerItem extends React.Component {
   renderIcon = () => {
@@ -17,7 +17,7 @@ class DrawerItem extends React.Component {
           <Entypo
             name="home"
             size={14}
-            color={focused ? "white" : melhusTheme.COLORS.PRIMARY}
+            color={focused ? "white" : MelhusTheme.COLORS.PRIMARY}
           />
         );
 
@@ -26,7 +26,7 @@ class DrawerItem extends React.Component {
           <MaterialIcons
             name="event"
             size={14}
-            color={focused ? "white" : melhusTheme.COLORS.PRIMARY}
+            color={focused ? "white" : MelhusTheme.COLORS.PRIMARY}
           />
         );
 
@@ -35,7 +35,7 @@ class DrawerItem extends React.Component {
           <AntDesign
             name="instagram"
             size={14}
-            color={focused ? "white" : melhusTheme.COLORS.PRIMARY}
+            color={focused ? "white" : MelhusTheme.COLORS.PRIMARY}
           />
         );
 
@@ -44,7 +44,7 @@ class DrawerItem extends React.Component {
           <Entypo
             name="facebook"
             size={14}
-            color={focused ? "white" : melhusTheme.COLORS.PRIMARY}
+            color={focused ? "white" : MelhusTheme.COLORS.PRIMARY}
           />
         );
       default:
@@ -88,11 +88,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   activeStyle: {
-    backgroundColor: melhusTheme.COLORS.ACTIVE,
+    backgroundColor: MelhusTheme.COLORS.ACTIVE,
     borderRadius: 4,
   },
   shadow: {
-    shadowColor: melhusTheme.COLORS.BLACK,
+    shadowColor: MelhusTheme.COLORS.BLACK,
     shadowOffset: {
       width: 0,
       height: 2,

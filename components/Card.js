@@ -5,7 +5,7 @@ import { StyleSheet, Image, TouchableWithoutFeedback } from "react-native";
 import { Block, Text, theme } from "galio-framework";
 import * as WebBrowser from "expo-web-browser";
 
-import { melhusTheme } from "../constants";
+import { MelhusTheme } from "../constants";
 
 class Card extends React.Component {
   render() {
@@ -67,7 +67,7 @@ class Card extends React.Component {
               style={styles.cardCta}
               size={12}
               muted={!ctaColor}
-              color={ctaColor || melhusTheme.COLORS.ACTIVE}
+              color={ctaColor || MelhusTheme.COLORS.ACTIVE}
               bold>
               {item.cta}
             </Text>
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 0,
     left: 0,
-    backgroundColor: melhusTheme.COLORS.BLUE,
+    backgroundColor: MelhusTheme.COLORS.BLUE,
     color: "white",
     fontWeight: "bold",
     paddingVertical: 2,
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   card: {
-    backgroundColor: melhusTheme.COLORS.WHITE,
+    backgroundColor: MelhusTheme.COLORS.WHITE,
     marginVertical: theme.SIZES.BASE,
     borderWidth: 0,
     minHeight: 114,
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 0,
   },
   shadow: {
-    shadowColor: melhusTheme.COLORS.BLACK,
+    shadowColor: MelhusTheme.COLORS.BLACK,
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 4,
     shadowOpacity: 0.1,

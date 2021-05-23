@@ -9,13 +9,13 @@ import { enableScreens } from "react-native-screens";
 enableScreens();
 
 import Screens from "./navigation/Screens";
-import { Images, events, melhusTheme } from "./constants";
+import { Images, EventList, MelhusTheme } from "./constants";
 
 // cache app images
 const assetImages = [Images.Logo];
 
 // cache product images
-events.map((article) => assetImages.push(article.image));
+EventList.map((event) => assetImages.push(event.image));
 
 function cacheImages(images) {
   return images.map((image) => {
