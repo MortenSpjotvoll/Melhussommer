@@ -60,6 +60,21 @@ class Header extends React.Component {
     );
   };
 
+  getTranslatedTitle(title) {
+    switch (title) {
+      case "Home":
+        return "Hjem";
+
+      case "Events":
+        return "Arrangementer";
+
+      case "Homepage":
+        return "Hjemmesiden";
+      default:
+        return title;
+    }
+  }
+
   renderHeader = () => {
     const { tabs } = this.props;
     if (tabs) {
@@ -90,7 +105,7 @@ class Header extends React.Component {
       <Block>
         <NavBar
           back={false}
-          title={title}
+          title={this.getTranslatedTitle(title)}
           style={navbarStyles}
           transparent={transparent}
           rightStyle={{ alignItems: "center" }}
@@ -123,7 +138,8 @@ class Header extends React.Component {
 
 const styles = StyleSheet.create({
   search: {
-    height: 36,
+    height: 30,
+    top: 2,
     width: width - 200,
     marginHorizontal: 16,
     borderWidth: 1,
@@ -134,7 +150,7 @@ const styles = StyleSheet.create({
   },
   title: {
     width: "100%",
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: "bold",
   },
   navbar: {

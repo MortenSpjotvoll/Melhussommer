@@ -121,7 +121,7 @@ function AppStack(props) {
           fontWeight: "normal",
         },
       }}
-      initialRouteName="Events">
+      initialRouteName="Home">
       <Drawer.Screen name="Home" component={HomeStack} />
       <Drawer.Screen name="Events" component={EventsStack} />
     </Drawer.Navigator>

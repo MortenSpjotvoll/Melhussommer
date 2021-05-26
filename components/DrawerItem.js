@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, TouchableOpacity, Linking } from "react-native";
 import { Block, Text, theme } from "galio-framework";
 import { Entypo } from "@expo/vector-icons";
-import { MaterialIcons } from "@expo/vector-icons";
+import { MaterialIcons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 
 import MelhusTheme from "../constants/Theme";
@@ -10,13 +10,14 @@ import MelhusTheme from "../constants/Theme";
 class DrawerItem extends React.Component {
   renderIcon = () => {
     const { title, focused } = this.props;
+    const iconSize = 18;
 
     switch (title) {
       case "Home":
         return (
           <Entypo
             name="home"
-            size={14}
+            size={iconSize}
             color={focused ? "white" : MelhusTheme.COLORS.PRIMARY}
           />
         );
@@ -25,7 +26,7 @@ class DrawerItem extends React.Component {
         return (
           <MaterialIcons
             name="event"
-            size={14}
+            size={iconSize}
             color={focused ? "white" : MelhusTheme.COLORS.PRIMARY}
           />
         );
@@ -34,7 +35,7 @@ class DrawerItem extends React.Component {
         return (
           <AntDesign
             name="instagram"
-            size={14}
+            size={iconSize}
             color={focused ? "white" : MelhusTheme.COLORS.PRIMARY}
           />
         );
@@ -43,7 +44,25 @@ class DrawerItem extends React.Component {
         return (
           <Entypo
             name="facebook"
-            size={14}
+            size={iconSize}
+            color={focused ? "white" : MelhusTheme.COLORS.PRIMARY}
+          />
+        );
+
+      case "TikTok":
+        return (
+          <MaterialIcons
+            name="music-note"
+            size={iconSize}
+            color={focused ? "white" : MelhusTheme.COLORS.PRIMARY}
+          />
+        );
+
+      case "Homepage":
+        return (
+          <MaterialCommunityIcons
+            name="web"
+            size={iconSize}
             color={focused ? "white" : MelhusTheme.COLORS.PRIMARY}
           />
         );
@@ -52,6 +71,39 @@ class DrawerItem extends React.Component {
     }
   };
 
+  getExternalLink(title) {
+    switch (title) {
+      case "Instagram":
+        return "https://www.instagram.com/ukmmelhus/";
+
+      case "Facebook":
+        return "fb://facewebmodal/f?href=https://www.facebook.com/ukmmelhus/";
+
+      case "TikTok":
+        return "https://www.tiktok.com/@ukmmelhus/";
+
+      case "Homepage":
+        return "https://ukm.no/melhus/";
+      default:
+        return null;
+    }
+  }
+
+  getTranslatedTitle(title) {
+    switch (title) {
+      case "Home":
+        return "Hjem";
+
+      case "Events":
+        return "Arrangementer";
+
+      case "Homepage":
+        return "Hjemmesiden";
+      default:
+        return title;
+    }
+  }
+
   render() {
     const { focused, title, navigation } = this.props;
 
@@ -59,21 +111,28 @@ class DrawerItem extends React.Component {
       styles.defaultStyle,
       focused ? [styles.activeStyle, styles.shadow] : null,
     ];
+    const externalLink = this.getExternalLink(title);
 
     return (
       <TouchableOpacity
         style={{ height: 60 }}
-        onPress={() => navigation.navigate(title)}>
+        onPress={() =>
+          externalLink !== null
+            ? Linking.openURL(externalLink).catch((err) =>
+                console.error("An error occurred", err)
+              )
+            : navigation.navigate(title)
+        }>
         <Block flex row style={containerStyles}>
           <Block middle flex={0.1} style={{ marginRight: 5 }}>
             {this.renderIcon()}
           </Block>
           <Block row center flex={0.9}>
             <Text
-              size={15}
+              size={16}
               bold={focused ? true : false}
-              color={focused ? "white" : "rgba(0,0,0,0.5)"}>
-              {title}
+              color={focused ? "white" : "rgba(0,0,0,0.75)"}>
+              {this.getTranslatedTitle(title)}
             </Text>
           </Block>
         </Block>

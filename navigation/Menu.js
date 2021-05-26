@@ -2,7 +2,7 @@ import React from "react";
 import { ScrollView, StyleSheet, Image } from "react-native";
 import { Block, Text, theme } from "galio-framework";
 import Images from "../constants/Images";
-import { DrawerItem as DrawerCustomItem } from "../components";
+import { DrawerItem } from "../components";
 
 function CustomDrawerContent({
   drawerPosition,
@@ -13,6 +13,7 @@ function CustomDrawerContent({
   ...rest
 }) {
   const screens = ["Home", "Events"];
+  const links = ["Instagram", "Facebook", "TikTok", "Homepage"];
   return (
     <Block
       style={styles.container}
@@ -20,11 +21,12 @@ function CustomDrawerContent({
       <Block flex={0.06} style={styles.header}>
         <Image styles={styles.logo} source={Images.Logo} />
       </Block>
+
       <Block flex style={{ paddingLeft: 8, paddingRight: 14 }}>
         <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
           {screens.map((item, index) => {
             return (
-              <DrawerCustomItem
+              <DrawerItem
                 title={item}
                 key={index}
                 navigation={navigation}
@@ -43,12 +45,19 @@ function CustomDrawerContent({
               }}
             />
             <Text color="#8898AA" style={{ marginTop: 16, marginLeft: 8 }}>
-              Social media
+              Sosiale medier
             </Text>
           </Block>
-          <DrawerCustomItem title="Instagram" navigation={navigation} />
-          <DrawerCustomItem title="Facebook" navigation={navigation} />
+          {links.map((item, index) => {
+            return (
+              <DrawerItem title={item} key={index} navigation={navigation} />
+            );
+          })}
         </ScrollView>
+      </Block>
+      <Block flex={0.06} style={styles.flags}>
+        <Image source={Images.FlagNO} style={styles.flag} />
+        <Image source={Images.FlagUS} style={styles.flag} />
       </Block>
     </Block>
   );
@@ -57,6 +66,16 @@ function CustomDrawerContent({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  flag: {
+    width: 36,
+    height: 24,
+    padding: 10,
+    marginRight: 10,
+  },
+  flags: {
+    flexDirection: "row",
+    paddingHorizontal: 28,
   },
   header: {
     paddingHorizontal: 28,

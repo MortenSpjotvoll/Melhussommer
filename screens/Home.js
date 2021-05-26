@@ -1,6 +1,7 @@
 import React from "react";
-import { Text } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import PDFReader from "rn-pdf-reader-js";
+import InstagramEmbed from "react-instagram-embed";
 
 class Home extends React.Component {
   render() {
@@ -13,4 +14,5 @@ class Home extends React.Component {
     );
   }
 }
+
 export default Home;

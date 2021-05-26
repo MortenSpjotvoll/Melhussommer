@@ -1,12 +1,9 @@
 {
   "expo": {
-    "name": "Melhuskulturen",
-    "slug": "melhus-kulturen",
+    "name": "Melhussommer",
+    "slug": "melhussommer",
     "privacy": "public",
-    "platforms": [
-      "ios",
-      "android"
-    ],
+    "platforms": ["ios", "android"],
     "version": "1.7.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,12 +15,10 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
-    "description": "App for events organized by Melhuskulturen"
+    "description": "App for events organized by UKM Melhus"
   }
 }
