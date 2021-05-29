@@ -3,9 +3,7 @@ import { ScrollView, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { Block, Text, theme } from "galio-framework";
 import Images from "../constants/Images";
 import { DrawerItem } from "../components";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { initLanguage, storeLanguageSelection } from "../scripts/language";
-let language = null;
 
 function CustomDrawerContent({
   drawerPosition,
@@ -16,17 +14,20 @@ function CustomDrawerContent({
 }) {
   const screens = ["Home", "Events"];
   const links = ["Instagram", "Facebook", "TikTok", "Homepage"];
-  const [value, setValue] = useState(0); // integer state
+  const [language, setLanguage] = useState("");
+  const test = async () => {
+    const l = await initLanguage();
+    setLanguage(l);
+  };
+  test();
   const setNO = async () => {
     await storeLanguageSelection("NO");
-    language = "NO";
-    setValue((value) => value + 1);
+    setLanguage("NO");
   };
 
   const setEN = async () => {
     await storeLanguageSelection("EN");
-    language = "EN";
-    setValue((value) => value + 1);
+    setLanguage("EN");
   };
   return (
     <Block
