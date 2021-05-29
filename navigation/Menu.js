@@ -1,19 +1,33 @@
-import React from "react";
-import { ScrollView, StyleSheet, Image } from "react-native";
+import React, { useState, useCallback, useReducer } from "react";
+import { ScrollView, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { Block, Text, theme } from "galio-framework";
 import Images from "../constants/Images";
 import { DrawerItem } from "../components";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { initLanguage, storeLanguageSelection } from "../scripts/language";
+let language = null;
 
 function CustomDrawerContent({
   drawerPosition,
   navigation,
-  profile,
   focused,
   state,
   ...rest
 }) {
   const screens = ["Home", "Events"];
   const links = ["Instagram", "Facebook", "TikTok", "Homepage"];
+  const [value, setValue] = useState(0); // integer state
+  const setNO = async () => {
+    await storeLanguageSelection("NO");
+    language = "NO";
+    setValue((value) => value + 1);
+  };
+
+  const setEN = async () => {
+    await storeLanguageSelection("EN");
+    language = "EN";
+    setValue((value) => value + 1);
+  };
   return (
     <Block
       style={styles.container}
@@ -28,6 +42,7 @@ function CustomDrawerContent({
             return (
               <DrawerItem
                 title={item}
+                language={language}
                 key={index}
                 navigation={navigation}
                 focused={state.index === index ? true : false}
@@ -44,20 +59,27 @@ function CustomDrawerContent({
                 borderWidth: StyleSheet.hairlineWidth,
               }}
             />
-            <Text color="#8898AA" style={{ marginTop: 16, marginLeft: 8 }}>
-              Sosiale medier
-            </Text>
+            <Text>{language == "EN" ? "Social media" : "Sosiale medier"}</Text>
           </Block>
           {links.map((item, index) => {
             return (
-              <DrawerItem title={item} key={index} navigation={navigation} />
+              <DrawerItem
+                title={item}
+                key={index}
+                language={language}
+                navigation={navigation}
+              />
             );
           })}
         </ScrollView>
       </Block>
       <Block flex={0.06} style={styles.flags}>
-        <Image source={Images.FlagNO} style={styles.flag} />
-        <Image source={Images.FlagUS} style={styles.flag} />
+        <TouchableOpacity onPress={setNO}>
+          <Image source={Images.FlagNO} style={styles.flag} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={setEN}>
+          <Image source={Images.FlagUS} style={styles.flag} />
+        </TouchableOpacity>
       </Block>
     </Block>
   );

@@ -56,7 +56,7 @@ function EventsStack(props) {
         name="Events"
         component={EventComponent}
         options={{
-          header: ({ navigation, scene }) => (
+          header: ({ navigation, scene, language }) => (
             <Header
               tabs={Filters}
               title="Events"
@@ -66,6 +66,7 @@ function EventsStack(props) {
               curTab={curTab}
               curSearch={curSearch}
               search
+              language={language}
             />
           ),
           cardStyle: { backgroundColor: "#F8F9FE" },
@@ -76,14 +77,20 @@ function EventsStack(props) {
 }
 
 function HomeStack(props) {
+  //alert(JSON.stringify(props));
   return (
     <Stack.Navigator mode="card" headerMode="screen">
       <Stack.Screen
         name="Home"
         component={Home}
         options={{
-          header: ({ navigation, scene }) => (
-            <Header title="Home" navigation={navigation} scene={scene} />
+          header: ({ navigation, scene, language }) => (
+            <Header
+              title="Home"
+              navigation={navigation}
+              scene={scene}
+              language={language}
+            />
           ),
           cardStyle: { backgroundColor: "#F8F9FE" },
         }}
@@ -93,10 +100,18 @@ function HomeStack(props) {
 }
 
 function AppStack(props) {
+  let language = props.language;
+  let setLanguage = props.changeLanguage;
   return (
     <Drawer.Navigator
       style={{ flex: 1 }}
-      drawerContent={(props) => <CustomDrawerContent {...props} />}
+      drawerContent={(props) => (
+        <CustomDrawerContent
+          {...props}
+          language={language}
+          setLanguage={setLanguage}
+        />
+      )}
       drawerStyle={{
         backgroundColor: "white",
         width: width * 0.8,
@@ -122,16 +137,21 @@ function AppStack(props) {
         },
       }}
       initialRouteName="Home">
-      <Drawer.Screen name="Home" component={HomeStack} />
-      <Drawer.Screen name="Events" component={EventsStack} />
+      <Drawer.Screen name="Home">
+        {() => <HomeStack language={language} />}
+      </Drawer.Screen>
+      <Drawer.Screen name="Events">
+        {() => <EventsStack {...props} />}
+      </Drawer.Screen>
     </Drawer.Navigator>
   );
 }
 
-export default function OnboardingStack(props) {
+export default function (props) {
+  // alert(JSON.stringify(props));
   return (
     <Stack.Navigator mode="card" headerMode="none">
-      <Stack.Screen name="App" component={AppStack} />
+      <Stack.Screen name="App">{() => <AppStack {...props} />}</Stack.Screen>
     </Stack.Navigator>
   );
 }

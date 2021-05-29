@@ -47,7 +47,7 @@ export default class Tabs extends React.Component {
 
   renderItem = (item) => {
     const isActive = this.state.active === item.id;
-
+    const { language } = this.props;
     const textColor = this.animatedValue.interpolate({
       inputRange: [0, 1],
       outputRange: [
@@ -68,7 +68,7 @@ export default class Tabs extends React.Component {
         <Animated.Text
           style={[styles.menuTitle, { color: textColor }]}
           onPress={() => this.selectMenu(item.id)}>
-          {item.title}
+          {language == "EN" ? item.titleEN : item.titleNO}
           {isActive ? <Entypo name="cross" size={16} color="white" /> : null}
         </Animated.Text>
       </Block>

@@ -1,6 +1,7 @@
 export default [
   {
-    title: "Chand uplugga",
+    titleNO: "Chand uplugga",
+    titleEN: "Chand unplugged",
     category: "Music",
     image:
       "https://mff.dx.no/77861.jpg?w=370&h=250&fit=crop&fit=crop&crop=faces,top&crop=faces,top&auto=compress",
@@ -9,13 +10,15 @@ export default [
     time: "19:00",
     place: "Kultursalen (NY)",
     target: "Adults",
-    cta: "View article",
+    ctaNO: "Vis artikkel",
+    ctaEN: "View article",
     horizontal: false,
     full: true,
     block: false,
   },
   {
-    title: "Terje Tysland",
+    titleNO: "Terje Tysland",
+    titleEN: "Terje Tysland",
     category: "Music",
     image:
       "https://mff.dx.no/77159.jpg?w=370&h=250&fit=crop&fit=crop&crop=faces,top&crop=faces,top&auto=compress",
@@ -24,13 +27,15 @@ export default [
     time: "19:00",
     place: "Kultursalen (NY)",
     target: "Adults",
-    cta: "View article",
+    ctaNO: "Vis artikkel",
+    ctaEN: "View article",
     horizontal: false,
     full: false,
     block: true,
   },
   {
-    title: "Foredrag med Dag Jørund Lønning: Korleis kjem me nærare naturen?",
+    titleNO: "Foredrag med Dag Jørund Lønning: Korleis kjem me nærare naturen?",
+    titleEN: "English translation",
     category: "Learning",
     image:
       "https://mff.dx.no/78040.jpg?w=370&h=250&fit=crop&fit=crop&crop=faces,top&crop=faces,top&auto=compress",
@@ -39,13 +44,15 @@ export default [
     time: "16:00",
     place: "Kultursalen (NY)",
     target: "Adults",
-    cta: "View article",
+    ctaNO: "Vis artikkel",
+    ctaEN: "View article",
     horizontal: false,
     full: false,
     block: false,
   },
   {
-    title: "«Jazz og vin» - jazzkonsert med Aspen trio og vinkurs",
+    titleNO: "«Jazz og vin» - jazzkonsert med Aspen trio og vinkurs",
+    titleEN: "English translation",
     category: "Music",
     image:
       "https://mff.dx.no/78044.jpg?w=370&h=250&fit=crop&fit=crop&crop=faces,top&crop=faces,top&auto=compress",
@@ -54,14 +61,16 @@ export default [
     time: "19:00",
     place: "Haugen gård, Bennave",
     target: "Adults",
-    cta: "View article",
+    ctaNO: "Vis artikkel",
+    ctaEN: "View article",
     horizontal: true,
     full: true,
     block: false,
   },
   {
-    title:
+    titleNO:
       "Tusen års matkultur og bondekultur i Melhus - foredrag ved Reidar Almås",
+    titleEN: "English translation",
     category: "Learning",
     image:
       "https://mff.dx.no/78037.png?w=370&h=250&fit=crop&fit=crop&crop=faces,top&crop=faces,top&auto=compress",
@@ -70,7 +79,8 @@ export default [
     time: "13:00",
     place: "Kultursalen (NY)",
     target: "Children",
-    cta: "View article",
+    ctaNO: "Vis artikkel",
+    ctaEN: "View article",
     horizontal: false,
     full: true,
     block: false,

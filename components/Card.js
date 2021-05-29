@@ -4,26 +4,25 @@ import PropTypes from "prop-types";
 import { StyleSheet, Image, TouchableWithoutFeedback } from "react-native";
 import { Block, Text, theme } from "galio-framework";
 import * as WebBrowser from "expo-web-browser";
-
 import { MelhusTheme } from "../constants";
 
 class Card extends React.Component {
   render() {
-    const { item, style, ctaColor } = this.props;
+    const { item, style, ctaColor, language } = this.props;
+    const isEnglish = language == "EN";
     var dict = {};
-
     dict["01"] = "Jan";
     dict["02"] = "Feb";
     dict["03"] = "Mar";
     dict["04"] = "Apr";
-    dict["05"] = "Mai";
+    dict["05"] = isEnglish ? "May" : "Mai";
     dict["06"] = "Jun";
     dict["07"] = "Jul";
     dict["08"] = "Aug";
     dict["09"] = "Sep";
-    dict["10"] = "Okt";
+    dict["10"] = isEnglish ? "Oct" : "Okt";
     dict["11"] = "Nov";
-    dict["12"] = "Des";
+    dict["12"] = isEnglish ? "Dec" : "Des";
     const _handlePressButtonAsync = async () => {
       await WebBrowser.openBrowserAsync(item.url);
     };
@@ -61,7 +60,7 @@ class Card extends React.Component {
             </Text>
 
             <Text size={14} style={styles.cardTitle}>
-              {item.title}
+              {isEnglish ? item.titleEN : item.titleNO}
             </Text>
             <Text
               style={styles.cardCta}
@@ -69,7 +68,7 @@ class Card extends React.Component {
               muted={!ctaColor}
               color={ctaColor || MelhusTheme.COLORS.ACTIVE}
               bold>
-              {item.cta}
+              {isEnglish ? item.ctaEN : item.ctaNO}
             </Text>
           </Block>
         </TouchableWithoutFeedback>

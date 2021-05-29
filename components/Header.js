@@ -6,6 +6,7 @@ import { Entypo } from "@expo/vector-icons";
 import Tabs from "./Tabs";
 import { Input } from "galio-framework";
 import { AntDesign } from "@expo/vector-icons";
+import { initLanguage } from "../scripts/language";
 
 import MelhusTheme from "../constants/Theme";
 
@@ -15,6 +16,19 @@ const iPhoneX = () =>
   (height === 812 || width === 812 || height === 896 || width === 896);
 
 class Header extends React.Component {
+  state = {
+    language: "NO",
+  };
+  async componentDidMount() {
+    let language = await initLanguage();
+    this.setState({ language: language });
+  }
+  async componentDidUpdate() {
+    let language = await initLanguage();
+    if (language !== this.state.language) {
+      this.setState({ language: language });
+    }
+  }
   handleLeftPress = () => {
     const { back, navigation } = this.props;
     return back ? navigation.goBack() : navigation.openDrawer();
@@ -22,12 +36,13 @@ class Header extends React.Component {
 
   renderSearch = () => {
     const { navigation, filter, curTab } = this.props;
+    const { language } = this.state;
     return (
       <Input
         right
         color="black"
         style={styles.search}
-        placeholder="Søk"
+        placeholder={language == "EN" ? "Search" : "Søk"}
         placeholderTextColor={"#8898AA"}
         onChangeText={(text) => {
           navigation.setParams({ tabId: null });
@@ -46,12 +61,13 @@ class Header extends React.Component {
 
   renderTabs = () => {
     const { tabs, navigation, filter, curSearch } = this.props;
-
+    const { language } = this.state;
     if (!tabs) return null;
 
     return (
       <Tabs
         data={tabs || []}
+        language={language}
         onChange={(id) => {
           navigation.setParams({ tabId: id });
           filter(id, curSearch);
@@ -95,7 +111,7 @@ class Header extends React.Component {
       navigation,
       ...props
     } = this.props;
-
+    const { language } = this.state;
     const navbarStyles = [
       styles.navbar,
       bgColor && { backgroundColor: bgColor },
@@ -105,7 +121,7 @@ class Header extends React.Component {
       <Block>
         <NavBar
           back={false}
-          title={this.getTranslatedTitle(title)}
+          title={language == "EN" ? title : this.getTranslatedTitle(title)}
           style={navbarStyles}
           transparent={transparent}
           rightStyle={{ alignItems: "center" }}

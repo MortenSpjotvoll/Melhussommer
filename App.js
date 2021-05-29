@@ -29,10 +29,9 @@ function cacheImages(images) {
 
 export default (props) => {
   const [isLoadingComplete, setLoading] = useState(false);
-
-  function _loadResourcesAsync() {
+  const _loadResourcesAsync = () => {
     return Promise.all([...cacheImages(assetImages)]);
-  }
+  };
 
   function _handleLoadingError(error) {
     console.warn(error);

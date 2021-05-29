@@ -2,12 +2,24 @@ import React from "react";
 import { StyleSheet, TouchableOpacity, Linking } from "react-native";
 import { Block, Text, theme } from "galio-framework";
 import { Entypo } from "@expo/vector-icons";
-import { MaterialIcons, MaterialCommunityIcons } from "@expo/vector-icons";
-import { AntDesign } from "@expo/vector-icons";
+import {
+  MaterialIcons,
+  MaterialCommunityIcons,
+  AntDesign,
+} from "@expo/vector-icons";
+import { initLanguage } from "../scripts/language";
 
 import MelhusTheme from "../constants/Theme";
 
 class DrawerItem extends React.Component {
+  state = {
+    language: "NO",
+  };
+  async componentDidMount() {
+    let language = await initLanguage();
+    this.setState({ language: language });
+  }
+
   renderIcon = () => {
     const { title, focused } = this.props;
     const iconSize = 18;
@@ -105,8 +117,15 @@ class DrawerItem extends React.Component {
   }
 
   render() {
-    const { focused, title, navigation } = this.props;
-
+    const { focused, title, navigation, language } = this.props;
+    let lang = language;
+    if (
+      typeof lang !== "undefined" &&
+      lang !== null &&
+      lang !== this.state.language
+    ) {
+      lang = this.state.language;
+    }
     const containerStyles = [
       styles.defaultStyle,
       focused ? [styles.activeStyle, styles.shadow] : null,
@@ -132,7 +151,7 @@ class DrawerItem extends React.Component {
               size={16}
               bold={focused ? true : false}
               color={focused ? "white" : "rgba(0,0,0,0.75)"}>
-              {this.getTranslatedTitle(title)}
+              {language == "EN" ? title : this.getTranslatedTitle(title)}
             </Text>
           </Block>
         </Block>
