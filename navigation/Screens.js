@@ -30,8 +30,8 @@ function Filter(id, text) {
       if (id === filter.id) {
         e = EventList.filter(
           (x) =>
-            x[filter.category] === filter.title ||
-            x[filter.category].includes(filter.title)
+            x[filter.category] === filter.titleEN ||
+            x[filter.category].includes(filter.titleEN)
         );
       }
     });
@@ -39,7 +39,7 @@ function Filter(id, text) {
 
   if (text !== null && text !== "") {
     e = e.filter((x) => {
-      return x.title
+      return x.titleEN
         .toString()
         .toLowerCase()
         .includes(text.toString().toLowerCase());
