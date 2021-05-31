@@ -1,12 +1,29 @@
 export default [
   {
+    titleNO: "Daily test",
+    titleEN: "Daily test",
+    category: "Music",
+    image:
+      "https://mff.dx.no/77861.jpg?w=370&h=250&fit=crop&fit=crop&crop=faces,top&crop=faces,top&auto=compress",
+    url: "https://www.melhuskulturen.no/konsert-d1adw84",
+    date: "",
+    time: "19:00",
+    place: "Kultursalen (NY)",
+    target: "Adults",
+    ctaNO: "Vis artikkel",
+    ctaEN: "View article",
+    horizontal: false,
+    full: true,
+    block: false,
+  },
+  {
     titleNO: "Chand uplugga",
     titleEN: "Chand unplugged",
     category: "Music",
     image:
       "https://mff.dx.no/77861.jpg?w=370&h=250&fit=crop&fit=crop&crop=faces,top&crop=faces,top&auto=compress",
     url: "https://www.melhuskulturen.no/konsert-d1adw84",
-    date: "22/05/2021",
+    date: "22/07/2021",
     time: "19:00",
     place: "Kultursalen (NY)",
     target: "Adults",
@@ -23,7 +40,7 @@ export default [
     image:
       "https://mff.dx.no/77159.jpg?w=370&h=250&fit=crop&fit=crop&crop=faces,top&crop=faces,top&auto=compress",
     url: "https://www.melhuskulturen.no/konsert-terje-tysland-g2c8nzg/",
-    date: "28/05/2021",
+    date: "28/06/2021",
     time: "19:00",
     place: "Kultursalen (NY)",
     target: "Adults",

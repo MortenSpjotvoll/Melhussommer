@@ -2,7 +2,8 @@ import React from "react";
 import { Dimensions } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { EventList, Filters } from "../constants";
+import { Filters } from "../constants";
+import { initializeEvents } from "../scripts/events";
 
 // screens
 import Home from "../screens/Home";
@@ -16,27 +17,30 @@ const { width } = Dimensions.get("screen");
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
-let e = EventList;
+let e = initializeEvents();
+
 let curTab = null;
 let curSearch = null;
 
 function Filter(id, text) {
   curSearch = text;
-  curTab = id;
-  if (id === null) {
-    e = EventList;
-  } else {
+  
+  if (id === null || curTab !== id) {
+    e = initializeEvents();
+  }
+  if(id !== null) {
     Filters.forEach((filter) => {
       if (id === filter.id) {
-        e = EventList.filter(
+        e = e.filter(
           (x) =>
-            x[filter.category] === filter.titleEN ||
-            x[filter.category].includes(filter.titleEN)
-        );
-      }
-    });
-  }
-
+          x[filter.category] === filter.titleEN ||
+          x[filter.category].includes(filter.titleEN)
+          );
+        }
+      });
+    }
+    
+    curTab = id;
   if (text !== null && text !== "") {
     e = e.filter((x) => {
       return x.titleEN
@@ -136,7 +140,7 @@ function AppStack(props) {
           fontWeight: "normal",
         },
       }}
-      initialRouteName="Home">
+      initialRouteName="Events">
       <Drawer.Screen name="Home">
         {() => <HomeStack language={language} />}
       </Drawer.Screen>

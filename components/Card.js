@@ -26,7 +26,7 @@ class Card extends React.Component {
     const _handlePressButtonAsync = async () => {
       await WebBrowser.openBrowserAsync(item.url);
     };
-
+    
     const cardContainer = [
       item.horizontal ? styles.horizontalStyles : styles.verticalStyles,
       styles.shadow,

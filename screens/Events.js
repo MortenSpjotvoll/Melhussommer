@@ -17,6 +17,7 @@ class Events extends React.Component {
 
   renderEvents = () => {
     const { events } = this.props;
+    
     const { language } = this.state;
     let tempElement = null;
     let i = 0;
