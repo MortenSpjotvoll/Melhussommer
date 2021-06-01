@@ -26,13 +26,29 @@ class Card extends React.Component {
     const _handlePressButtonAsync = async () => {
       await WebBrowser.openBrowserAsync(item.url);
     };
-    
+
     const cardContainer = [
       item.horizontal ? styles.horizontalStyles : styles.verticalStyles,
       styles.shadow,
       styles.card,
       style,
     ];
+
+    const getDateDisplay = () => {
+      if (typeof item.week !== "undefined" && item.week !== null) {
+        return (<Text style={styles.date}>
+          {isEnglish ? "Week" : "Uke"}
+          {"\n"}
+          {item.week}
+        </Text>)
+      } else {
+        return (<Text style={styles.date}>
+          {item.date.substring(0, 2)}
+          {"\n"}
+          {dict[item.date.substring(3, 5)]}
+        </Text>)
+      }
+    }
 
     return (
       <Block row={item.horizontal} card flex style={cardContainer}>
@@ -46,11 +62,7 @@ class Card extends React.Component {
               source={{ uri: item.image }}
               style={item.full ? styles.fullImage : styles.horizontalImage}
             />
-            <Text style={styles.date}>
-              {item.date.substring(0, 2)}
-              {"\n"}
-              {dict[item.date.substring(3, 5)]}
-            </Text>
+            {getDateDisplay()}
           </Block>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback onPress={_handlePressButtonAsync}>

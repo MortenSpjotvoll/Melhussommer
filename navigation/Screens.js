@@ -32,9 +32,10 @@ function Filter(id, text) {
     Filters.forEach((filter) => {
       if (id === filter.id) {
         e = e.filter(
-          (x) =>
-          x[filter.category] === filter.titleEN ||
-          x[filter.category].includes(filter.titleEN)
+          (x) => 
+            x[filter.category] === filter.titleEN ||
+            x[filter.category].includes(filter.titleEN)
+          
           );
         }
       });

@@ -21,12 +21,14 @@ class Events extends React.Component {
     const { language } = this.state;
     let tempElement = null;
     let i = 0;
+    let order = "";
     return (
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.events}>
         <Block flex>
           {events.map((element) => {
+            order = order + ", " + element.titleEN;
             if (element.block || tempElement != null) {
               if (tempElement == null) {
                 tempElement = element;
@@ -34,6 +36,7 @@ class Events extends React.Component {
               }
               let firstElement = tempElement;
               tempElement = null;
+              alert('hi')
               return (
                 <Block key={i++} flex row>
                   <Card
@@ -48,6 +51,8 @@ class Events extends React.Component {
             }
             return <Card item={element} key={i++} language={language} />;
           })}
+          {tempElement != null ? <Card item={tempElement} key={i++} language={language} /> : null}
+          {tempElement = null}
         </Block>
       </ScrollView>
     );
