@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
   search: {
     height: 30,
     top: 2,
-    width: width - 200,
+    width: width - 250,
     marginHorizontal: 16,
     borderWidth: 1,
     borderRadius: 3,

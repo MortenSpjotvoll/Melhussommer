@@ -36,7 +36,6 @@ class Events extends React.Component {
               }
               let firstElement = tempElement;
               tempElement = null;
-              alert('hi')
               return (
                 <Block key={i++} flex row>
                   <Card

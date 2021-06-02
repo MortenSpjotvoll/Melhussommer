@@ -15,11 +15,15 @@ export function initializeEvents() {
             let today = new Date();
             let firstDate = Date.parse(shittyIsoConverter(x.time, x.dateFirst));
             let lastDate = Date.parse(shittyIsoConverter(x.time, x.dateLast));
-            if (today < firstDate || today > lastDate) {
+            let shouldGoNextDay = true;
+            if (today > lastDate) {
                 x.datetime = null;
                 return;
-            } 
-            if (today.getHours() > parseInt(x.time.substr(0, 2))) {
+            }  else if (today < firstDate) {
+                today = new Date(firstDate);
+                shouldGoNextDay = false;
+            }
+            if (shouldGoNextDay && today.getHours() > parseInt(x.time.substr(0, 2))) {
                 today.setDate(today.getDate() + 1)
             }
             x.date = `${today.getDate().toString().padStart(2, '0')}/${(today.getMonth() + 1).toString().padStart(2, '0')}/${today.getFullYear()}`
@@ -29,7 +33,6 @@ export function initializeEvents() {
 
     e = e.filter((x) => {
         if(typeof x.datetime === "undefined") {
-            
             return;
         }
         var date = Date.parse(x.datetime);

@@ -35,7 +35,7 @@ class Card extends React.Component {
     ];
 
     const getDateDisplay = () => {
-      if (typeof item.week !== "undefined" && item.week !== null) {
+      if (typeof item.week !== "undefined" && item.week !== null && item.week !== "") {
         return (<Text style={styles.date}>
           {isEnglish ? "Week" : "Uke"}
           {"\n"}
