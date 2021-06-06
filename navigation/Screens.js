@@ -33,8 +33,8 @@ function Filter(id, text) {
       if (id === filter.id) {
         e = e.filter(
           (x) => 
-            x[filter.category] === filter.titleEN ||
-            x[filter.category].includes(filter.titleEN)
+            x[filter.category] === filter.titleNO ||
+            x[filter.category].includes(filter.titleNO)
           
           );
         }
@@ -44,7 +44,7 @@ function Filter(id, text) {
     curTab = id;
   if (text !== null && text !== "") {
     e = e.filter((x) => {
-      return x.titleEN
+      return x.titleNO
         .toString()
         .toLowerCase()
         .includes(text.toString().toLowerCase());
