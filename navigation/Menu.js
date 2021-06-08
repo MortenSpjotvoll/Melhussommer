@@ -15,11 +15,14 @@ function CustomDrawerContent({
   const screens = ["Home", "Events"];
   const links = ["Instagram", "Facebook", "TikTok", "Homepage"];
   const [language, setLanguage] = useState("");
-  const test = async () => {
+
+  const getLanguage = async () => {
     const l = await initLanguage();
     setLanguage(l);
   };
-  test();
+
+  getLanguage();
+
   const setNO = async () => {
     await storeLanguageSelection("NO");
     setLanguage("NO");

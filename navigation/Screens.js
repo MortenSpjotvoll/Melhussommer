@@ -141,7 +141,7 @@ function AppStack(props) {
           fontWeight: "normal",
         },
       }}
-      initialRouteName="Events">
+      initialRouteName="Home">
       <Drawer.Screen name="Home">
         {() => <HomeStack language={language} />}
       </Drawer.Screen>

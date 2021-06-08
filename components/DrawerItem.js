@@ -7,20 +7,9 @@ import {
   AntDesign,
   Entypo
 } from "@expo/vector-icons";
-
-import { initLanguage } from "../scripts/language";
-
 import MelhusTheme from "../constants/Theme";
 
 class DrawerItem extends React.Component {
-  state = {
-    language: "NO",
-  };
-  async componentDidMount() {
-    let language = await initLanguage();
-    this.setState({ language: language });
-  }
-
   renderIcon = () => {
     const { title, focused } = this.props;
     const iconSize = 18;
@@ -119,14 +108,7 @@ class DrawerItem extends React.Component {
 
   render() {
     const { focused, title, navigation, language } = this.props;
-    let lang = language;
-    if (
-      typeof lang !== "undefined" &&
-      lang !== null &&
-      lang !== this.state.language
-    ) {
-      lang = this.state.language;
-    }
+
     const containerStyles = [
       styles.defaultStyle,
       focused ? [styles.activeStyle, styles.shadow] : null,
