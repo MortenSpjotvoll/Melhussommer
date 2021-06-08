@@ -478,6 +478,5 @@ export default [
     horizontal: false,
     full: false,
     block: true,
-  },
-
+  }
 ];
