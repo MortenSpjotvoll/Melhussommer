@@ -1,12 +1,13 @@
 import React from "react";
 import { StyleSheet, TouchableOpacity, Linking } from "react-native";
-import { Block, Text, theme } from "galio-framework";
-import { Entypo } from "@expo/vector-icons";
+import { Block, Text } from "galio-framework";
 import {
   MaterialIcons,
   MaterialCommunityIcons,
   AntDesign,
+  Entypo
 } from "@expo/vector-icons";
+
 import { initLanguage } from "../scripts/language";
 
 import MelhusTheme from "../constants/Theme";
