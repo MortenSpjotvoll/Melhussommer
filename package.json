@@ -4,7 +4,6 @@
   "private": true,
   "version": "1.0.0",
   "description": "An app for UKM Melhus",
-  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
