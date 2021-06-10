@@ -4,7 +4,7 @@
     "slug": "melhussommer",
     "privacy": "public",
     "platforms": ["ios", "android"],
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -19,11 +19,12 @@
     "description": "App for events organized by UKM Melhus",
     "ios": {
       "bundleIdentifier": "com.tinvol.melhussommer",
-      "buildNumber": "1.0.0"
+      "buildNumber": "1.0.1",
+      "supportsTablet": true
     },
     "android": {
       "package": "com.tinvol.melhussommer",
-      "versionCode": 100,
+      "versionCode": 101,
       "permissions" : []
     }
   }
