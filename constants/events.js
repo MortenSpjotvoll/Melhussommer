@@ -524,8 +524,8 @@ export default [
     titleEN: "Workshops  ",
     category: ["workshop", "ungdom", "innendørs"],
     image:
-      "https://pbs.twimg.com/media/ElrfBetXEAUYdgb.jpg",
-    url: "https://drive.google.com/file/d/1jr6gcHv2xTJUs0EfWSWQocjVZP4Aqj8w/view?usp=sharing",
+      "https://sommerimelhustest.files.wordpress.com/2021/06/workshops-bilde.jpg?resize=438%2C438",
+    url: "https://drive.google.com/file/d/1kleyhDVHtANNmZ8FG8XusezkaifuthH9/view?usp=sharing",
     date: "08/07/2021",
     week: "",
     dateFirst: "08/07/2021",
@@ -580,4 +580,3 @@ export default [
     block: false,
   },
 ];
-

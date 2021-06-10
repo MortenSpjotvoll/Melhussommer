@@ -20,7 +20,10 @@
     "ios": {
       "bundleIdentifier": "com.tinvol.melhussommer",
       "buildNumber": "1.0.2",
-      "supportsTablet": true
+      "supportsTablet": true,
+      "cache": {
+        "disabled": true
+      }
     },
     "android": {
       "package": "com.tinvol.melhussommer",
