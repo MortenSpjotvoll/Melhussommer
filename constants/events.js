@@ -405,7 +405,7 @@ export default [
     category: ["aktivitet", "lek", "barn", "utendørs"],
     image:
       "https://docplayer.me/docs-images/62/46519025/images/6-0.jpg",
-    url: "https://www.flaail.no/blog/post/173354/mesternes-mester-dag-for-barn-i-4.%2c-5.-og-6.-trinn-28.06.21",
+    url: "https://www.flaail.no/blog/post/173489/aktivitetsdag?ispage=true",
     date: "28/06/2021",
     week: "",
     dateFirst: "28/06/2021",
@@ -505,7 +505,7 @@ export default [
     category: ["utendørs", "lek", "barn"],
     image:
       "https://www.driveforlife.com/wp-content/uploads/2020/08/DSC09638-Usain-Bolt-1024x684.jpg",
-    url: "https://www.driveforlife.com/inspire/",
+    url: "https://drive.google.com/file/d/1Rzf4nDkQlThU-rUlVYVTijzJlHY6c4Y5/view?usp=sharing",
     date: "",
     week: "25-32",
     dateFirst: "29/06/2021",
@@ -579,4 +579,28 @@ export default [
     full: false,
     block: false,
   },
+  {
+    titleNO: "Konsert med Cadenza UB",
+    titleEN: "Concert with Cadenza UB",
+    category: ["show", "ungdom", "innendørs"],
+    image:
+      "https://sommerimelhustest.files.wordpress.com/2021/06/cadenza.jpg?resize=438%2C438",
+    url: "https://drive.google.com/file/d/1EV1yi0yL6g1wKYLmYDWNwAcZjpcfwvmZ/view?usp=sharing",
+    date: "23/06/2021",
+    week: "",
+    dateFirst: "23/06/2021",
+    dateLast: "23/06/2021",
+    time: "19:30",
+    place: "Sentrum",
+    target: ["Ungdomsskole", "VGS"],
+    ctaNO: "Vis aktivitet",
+    ctaEN: "View activity",
+    horizontal: true,
+    full: false,
+    block: false,
+  },
 ];
+
+
+
+
